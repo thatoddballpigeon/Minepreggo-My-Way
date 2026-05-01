@@ -1,0 +1,196 @@
+{
+  "belly_touch": {
+    "subtitle": "subtitles.entity.pregnant.belly.touch",
+    "sounds": [
+      {
+        "name": "minepreggo:belly_touch",
+        "stream": false
+      }
+    ]
+  },
+  "pregnant_preggo_mob_death": {
+    "subtitle": "subtitles.entity.pregnant.preggo_mob.death",
+    "sounds": [
+      {
+        "name": "minepreggo:pregnant_preggo_mob_death",
+        "stream": false
+      }
+    ]
+  },
+  "pregnancy_pain1": {
+    "subtitle": "subtitles.entity.pregnant.player.pain",
+    "sounds": [
+      {
+        "name": "minepreggo:pregnancy_pain1",
+        "stream": false
+      }
+    ]
+  },
+  "pregnancy_pain2": {
+    "subtitle": "subtitles.entity.pregnant.player.pain",
+    "sounds": [
+      {
+        "name": "minepreggo:pregnancy_pain2",
+        "stream": false
+      }
+    ]
+  },
+  "pregnancy_pain3": {
+    "subtitle": "subtitles.entity.pregnant.player.pain",
+    "sounds": [
+      {
+        "name": "minepreggo:pregnancy_pain3",
+        "stream": false
+      }
+    ]
+  },
+  "pregnancy_pain4": {
+    "subtitle": "subtitles.entity.pregnant.player.pain",
+    "sounds": [
+      {
+        "name": "minepreggo:pregnancy_pain4",
+        "stream": false
+      }
+    ]
+  },
+  "player_birth": {
+    "subtitle": "subtitles.entity.pregnant.player.birth",
+    "sounds": [
+      {
+        "name": "minepreggo:player_birth",
+        "stream": false
+      }
+    ]
+  },
+  "player_contraction": {
+    "subtitle": "subtitles.entity.pregnant.player.contraction",
+    "sounds": [
+      {
+        "name": "minepreggo:player_contraction",
+        "stream": false
+      }
+    ]
+  },
+  "player_miscarriage": {
+    "subtitle": "subtitles.entity.pregnant.player.miscarriage",
+    "sounds": [
+      {
+        "name": "minepreggo:player_miscarriage",
+        "stream": false
+      }
+    ]
+  },
+  "pregnant_stomach_aching": {
+    "subtitle": "subtitles.entity.pregnant.stomach.aching",
+    "sounds": [
+      "minepreggo:entity/pregnant/stomach/aching/growl_0",
+      "minepreggo:entity/pregnant/stomach/aching/growl_1",
+      "minepreggo:entity/pregnant/stomach/aching/growl_2",
+      "minepreggo:entity/pregnant/stomach/aching/growl_3",
+      "minepreggo:entity/pregnant/stomach/aching/growl_4",
+      "minepreggo:entity/pregnant/stomach/aching/growl_5"
+    ],
+    "stream": false
+  },
+  "pregnant_stomach_digesting": {
+    "subtitle": "subtitles.entity.pregnant.stomach.digesting",
+    "sounds": [
+      "minepreggo:entity/pregnant/stomach/digesting/digest_0",
+      "minepreggo:entity/pregnant/stomach/digesting/digest_1",
+      "minepreggo:entity/pregnant/stomach/digesting/digest_2",
+      "minepreggo:entity/pregnant/stomach/digesting/digest_3",
+      "minepreggo:entity/pregnant/stomach/digesting/digest_4",
+      "minepreggo:entity/pregnant/stomach/digesting/digest_5",
+      "minepreggo:entity/pregnant/stomach/digesting/digest_6",
+      "minepreggo:entity/pregnant/stomach/digesting/digest_7",
+      "minepreggo:entity/pregnant/stomach/digesting/digest_8"
+    ],
+    "stream": false
+  },
+  "pregnant_stomach_empty": {
+    "subtitle": "subtitles.entity.pregnant.stomach.empty",
+    "sounds": [
+      "minepreggo:entity/pregnant/stomach/empty/growl_0",
+      "minepreggo:entity/pregnant/stomach/empty/growl_1",
+      "minepreggo:entity/pregnant/stomach/empty/growl_2",
+      "minepreggo:entity/pregnant/stomach/empty/growl_3"
+    ],
+    "stream": false
+  },
+  "pregnant_stomach_full": {
+    "subtitle": "subtitles.entity.pregnant.stomach.full",
+    "sounds": [
+      "minepreggo:entity/pregnant/stomach/full/digest_0",
+      "minepreggo:entity/pregnant/stomach/full/digest_1",
+      "minepreggo:entity/pregnant/stomach/full/digest_2",
+      "minepreggo:entity/pregnant/stomach/full/digest_3",
+      "minepreggo:entity/pregnant/stomach/full/digest_4",
+      "minepreggo:entity/pregnant/stomach/full/digest_5"
+    ],
+    "stream": false
+  },
+  "pregnant_stomach_sated": {
+    "subtitle": "subtitles.entity.pregnant.stomach.sated",
+    "sounds": [
+      "minepreggo:entity/pregnant/stomach/sated/digest_0",
+      "minepreggo:entity/pregnant/stomach/sated/digest_1",
+      "minepreggo:entity/pregnant/stomach/sated/digest_2",
+      "minepreggo:entity/pregnant/stomach/sated/digest_3",
+      "minepreggo:entity/pregnant/stomach/sated/digest_4",
+      "minepreggo:entity/pregnant/stomach/sated/digest_5",
+      "minepreggo:entity/pregnant/stomach/sated/digest_6",
+      "minepreggo:entity/pregnant/stomach/sated/digest_7",
+      "minepreggo:entity/pregnant/stomach/sated/digest_8",
+      "minepreggo:entity/pregnant/stomach/sated/digest_9"
+    ],
+    "stream": false
+  },
+  "pregnant_stomach_upset": {
+    "subtitle": "subtitles.entity.pregnant.stomach.upset",
+    "sounds": [
+      "minepreggo:entity/pregnant/stomach/upset/growl_0",
+      "minepreggo:entity/pregnant/stomach/upset/growl_1",
+      "minepreggo:entity/pregnant/stomach/upset/growl_2"
+    ],
+    "stream": false
+  },
+  "pregnant_womb_swell": {
+    "subtitle": "subtitles.entity.pregnant.womb.swell",
+    "sounds": [
+      "minepreggo:entity/pregnant/womb/swell/swell_0",
+      "minepreggo:entity/pregnant/womb/swell/swell_1",
+      "minepreggo:entity/pregnant/womb/swell/swell_2",
+      "minepreggo:entity/pregnant/womb/swell/swell_3",
+      "minepreggo:entity/pregnant/womb/swell/swell_4",
+      "minepreggo:entity/pregnant/womb/swell/swell_5"
+    ],
+    "stream": false
+  },
+  "player_push_1": {
+    "subtitle": "subtitles.entity.pregnant.player.push",
+    "sounds": [
+      {
+        "name": "minepreggo:player_push_1",
+        "stream": false
+      }
+    ]
+  },
+  "player_push_2": {
+    "subtitle": "subtitles.entity.pregnant.player.push",
+    "sounds": [
+      {
+        "name": "minepreggo:player_push_2",
+        "stream": false
+      }
+    ]
+  },
+  "player_push_3": {
+    "subtitle": "subtitles.entity.pregnant.player.push",
+    "sounds": [
+      {
+        "name": "minepreggo:player_push_3",
+        "stream": false
+      }
+    ]
+  }
+}

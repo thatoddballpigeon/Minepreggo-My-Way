@@ -1,0 +1,12 @@
+package dev.dixmk.minepreggo.client.resources.sounds;
+
+import dev.dixmk.minepreggo.init.MinepreggoModSounds;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.LivingEntity;
+
+public class StomachUpsetSoundInstance extends StomachSoundInstance {
+    public StomachUpsetSoundInstance(LivingEntity p_119621_) {
+        super(p_119621_, MinepreggoModSounds.PREGNANT_STOMACH_UPSET.get(), SoundSource.AMBIENT);
+        this.delay = 0;
+    }
+}
