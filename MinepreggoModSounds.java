@@ -49,11 +49,6 @@ public class MinepreggoModSounds {
 		};
 	}
 	
-	public static final SoundEvent getRandomStomachGrowls(RandomSource random) {
-		var rand = random;
-		return PREGNANT_STOMACH_FULL.get();
-	}
-	
 	public static final SoundEvent getRandomPlayerPush(RandomSource random) {
 		return switch (random.nextInt(3)) {
 			case 0 -> PLAYER_PUSH_1.get();

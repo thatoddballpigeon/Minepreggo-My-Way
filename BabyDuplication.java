@@ -112,7 +112,7 @@ public class BabyDuplication extends InstantenousMobEffect {
                 cap.getFemaleData().ifPresent(femaleData -> {
                     if (femaleData.isPregnant() && femaleData.isPregnancyDataInitialized()) {          	
                     	if (player.hasEffect(MinepreggoModMobEffects.ENDER_DRAGON_PREGNANCY.get())) {
-                        	LivingEntityHelper.playSoundNearTo(target, MinepreggoModSounds.getRandomStomachGrowls(target.getRandom()));
+                            client.getSoundManager().play(new StomachAchingSoundInstance(target));
                         	if (femaleData.getPregnancyData().getCurrentPregnancyPhase().compareTo(PregnancyPhase.P3) >= 0) {
                         		MessageHelper.sendTo(player, Component.translatable("chat.minepreggo.player.pregnancy.message.cannot_apply_baby_duplication.ender_dragon_pregnancy.2"), true);
                         		if (player.getHealth() > 2f) {
