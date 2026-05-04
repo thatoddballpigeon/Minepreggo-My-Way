@@ -10,6 +10,7 @@ import dev.dixmk.minepreggo.world.entity.LivingEntityHelper;
 import dev.dixmk.minepreggo.world.entity.preggo.ITamablePregnantPreggoMob;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SoundInstance;
+import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -126,6 +127,7 @@ public abstract class AbstractPregnancySystem<E extends LivingEntity> implements
 		if (this.stomachGrowlCooldown >= 20) {
 			this.stomachGrowlCooldown = 0;
 			this.stomachGrowlSound = -1;
+			SoundManager soundManager = Minecraft.getInstance().getSoundManager();
 			int foodLevel;
 			if (this.pregnantEntity instanceof ServerPlayer player) {
 				foodLevel = player.getFoodData().getFoodLevel();
@@ -155,6 +157,8 @@ public abstract class AbstractPregnancySystem<E extends LivingEntity> implements
 							this.stomachGrowlSound = 4;
 						}
 					}
+
+					soundManager.play(getRandomStomachGrowls(this.pregnantEntity, this.stomachGrowlSound));
 				}
 			} else if (this.pregnantEntity instanceof ITamablePregnantPreggoMob handler) {
 				foodLevel = handler.getTamableData().getFullness();
@@ -180,10 +184,9 @@ public abstract class AbstractPregnancySystem<E extends LivingEntity> implements
 							this.stomachGrowlSound = 4;
 						}
 					}
+					soundManager.play(getRandomStomachGrowls(this.pregnantEntity, this.stomachGrowlSound));
 				}
 			}
-
-			Minecraft.getInstance().getSoundManager().play(getRandomStomachGrowls(this.pregnantEntity, this.stomachGrowlSound));
 		}
 	}
 
