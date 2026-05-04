@@ -7,6 +7,7 @@ import dev.dixmk.minepreggo.init.MinepreggoCapabilities;
 import dev.dixmk.minepreggo.init.MinepreggoModMobEffects;
 import dev.dixmk.minepreggo.init.MinepreggoModSounds;
 import dev.dixmk.minepreggo.world.entity.LivingEntityHelper;
+import dev.dixmk.minepreggo.world.entity.preggo.ITamablePregnantPreggoMob;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.core.particles.ParticleTypes;
@@ -125,22 +126,23 @@ public abstract class AbstractPregnancySystem<E extends LivingEntity> implements
 		if (this.stomachGrowlCooldown >= 20) {
 			this.stomachGrowlCooldown = 0;
 			this.stomachGrowlSound = -1;
+			int foodLevel;
 			if (this.pregnantEntity instanceof ServerPlayer player) {
-				var foodLevel = player.getFoodData().getFoodLevel();
+				foodLevel = player.getFoodData().getFoodLevel();
 				this.stomachGrowlProb = (0.125f - (foodLevel / 100f) / 2f);
 				if (this.randomSource.nextFloat() < this.stomachGrowlProb) {
-					this.pregnantEntity.getCapability(MinepreggoCapabilities.PLAYER_DATA).ifPresent(cap -> {
+					player.getCapability(MinepreggoCapabilities.PLAYER_DATA).ifPresent(cap -> {
 						cap.getFemaleData().ifPresent(femaleData -> {
 							var pregnancySystem = femaleData.getPregnancyData();
 							final var pregnancyHealth = pregnancySystem.getPregnancyHealth();
 							if (pregnancyHealth <= 40
-							|| PregnancyPain.isLaborPain(pregnancySystem.getPregnancyPain())) {
+									|| PregnancyPain.isLaborPain(pregnancySystem.getPregnancyPain())) {
 								this.stomachGrowlSound = 0;
 							}
 						});
 					});
 
-					if (this.pregnantEntity.hasEffect(MinepreggoModMobEffects.MORNING_SICKNESS.get())) {
+					if (player.hasEffect(MinepreggoModMobEffects.MORNING_SICKNESS.get())) {
 						this.stomachGrowlSound = 5;
 					} else if (this.stomachGrowlSound != 0) {
 						if (player.getFoodData().getSaturationLevel() > 0) {
@@ -153,15 +155,35 @@ public abstract class AbstractPregnancySystem<E extends LivingEntity> implements
 							this.stomachGrowlSound = 4;
 						}
 					}
-
-					Minecraft.getInstance().getSoundManager().play(getRandomStomachGrowls(this.pregnantEntity, this.stomachGrowlSound));
 				}
-			} else {
-				this.stomachGrowlProb = 0.5f;
+			} else if (this.pregnantEntity instanceof ITamablePregnantPreggoMob handler) {
+				foodLevel = handler.getTamableData().getFullness();
+				this.stomachGrowlProb = (0.125f - (foodLevel / 100f) / 2f);
 				if (this.randomSource.nextFloat() < this.stomachGrowlProb) {
-					LivingEntityHelper.playSoundNearTo(this.pregnantEntity, MinepreggoModSounds.PREGNANT_STOMACH_FULL.get(), 0.75f);
+					var pregnancySystem = handler.getPregnancyData();
+					var pregnancyHealth = pregnancySystem.getPregnancyHealth();
+					if (pregnancyHealth <= 40
+							|| PregnancyPain.isLaborPain(pregnancySystem.getPregnancyPain())) {
+						this.stomachGrowlSound = 0;
+					}
+
+					if (this.pregnantEntity.hasEffect(MinepreggoModMobEffects.MORNING_SICKNESS.get())) {
+						this.stomachGrowlSound = 5;
+					} else if (this.stomachGrowlSound != 0) {
+						if (foodLevel >= 20) {
+							this.stomachGrowlSound = 1;
+						} else if (foodLevel <= 6) {
+							this.stomachGrowlSound = 2;
+						} else if (foodLevel >= 14) {
+							this.stomachGrowlSound = 3;
+						} else {
+							this.stomachGrowlSound = 4;
+						}
+					}
 				}
 			}
+
+			Minecraft.getInstance().getSoundManager().play(getRandomStomachGrowls(this.pregnantEntity, this.stomachGrowlSound));
 		}
 	}
 
